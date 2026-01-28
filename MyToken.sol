@@ -8,7 +8,6 @@ contract MyToken {
     uint8 public decimals = 18;
     uint256 public totalSupply;
 
-    // Balances and allowances
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
 
@@ -45,7 +44,6 @@ contract MyToken {
         return true;
     }
 
-    // Transfer using allowance
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_to != address(0), "Cannot transfer to zero address");
         require(balanceOf[_from] >= _value, "Insufficient balance");
